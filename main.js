@@ -9,17 +9,17 @@ var claimReservation = function (name) {
     if (name.toLowerCase() === key.toLowerCase()) {
       isNameFound = true;
       if (reservations[key].claimed) {
-        alert("Hello " + name + ". Your reservation is ALREAY claimed");
+        document.getElementById("message").innerHTML= "Hello " + name + ". Your reservation is ALREAY claimed";
       }
       else {
-        alert("Hello " + name + ". Your reservation is NOT YET claimed");
+        document.getElementById("message").innerHTML = "Hello " + name + ". Your reservation WAS NOT YET claimed - thanks for claiming it NOW!";
         reservations[key].claimed = true;
       }
       break;
     }
   }
   if (isNameFound === false) {
-    alert("Hello " + name + ". There is nothing under your name, You will be now added");
+      document.getElementById("message").innerHTML = "Hello " + name + ". There is nothing under your name, You will now be added";
     reservations[name] = { claimed: false };
   }
 };
