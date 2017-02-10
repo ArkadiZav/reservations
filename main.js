@@ -32,7 +32,7 @@ var addName = function(name) {
   reservationList.appendChild(newReservation);
 };
 
-// before clicking on anything - I want to display my current database
+// before clicking on anything - I display my current database
 for (var key in reservations) {
     addName(key);
 }
@@ -42,5 +42,3 @@ document.getElementById("button").onclick = function() {
   claimReservation(name);
   addName(name);
 };
-
-console.log(reservations);
